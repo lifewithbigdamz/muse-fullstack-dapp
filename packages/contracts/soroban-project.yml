@@ -1,0 +1,38 @@
+name: muse_contracts
+version: "1.0.0"
+description: "Muse AI Art Marketplace Smart Contracts on Stellar"
+
+# Contract dependencies
+dependencies:
+  - name: token
+    version: ">=0.1.0"
+
+# Build configuration
+build:
+  binary: "target/wasm32-unknown-unknown/release/muse_contracts.wasm"
+
+# Test configuration
+test:
+  standalone:
+    network: "Standalone Network ; February 2017"
+    rpc_url: "http://localhost:8000/soroban/rpc"
+    friendbot_url: "https://friendbot.stellar.org"
+  testnet:
+    network: "Test SDF Network ; September 2015"
+    rpc_url: "https://soroban-testnet.stellar.org"
+    friendbot_url: "https://friendbot.stellar.org"
+
+# Deployment configuration
+deploy:
+  standalone:
+    network: "Standalone Network ; February 2017"
+    rpc_url: "http://localhost:8000/soroban/rpc"
+    friendbot_url: "https://friendbot.stellar.org"
+  testnet:
+    network: "Test SDF Network ; September 2015"
+    rpc_url: "https://soroban-testnet.stellar.org"
+    friendbot_url: "https://friendbot.stellar.org"
+  mainnet:
+    network: "Public Global Stellar Network ; September 2015"
+    rpc_url: "https://soroban.stellar.org"
+    friendbot_url: null
