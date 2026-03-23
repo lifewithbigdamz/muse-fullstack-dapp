@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export function ExplorePage() {
   const [showFilters, setShowFilters] = useState(false)
@@ -100,7 +101,7 @@ export function ExplorePage() {
         {/* Artwork Grid */}
         <div className="grid-mobile xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-            <div key={i} className="card-mobile overflow-hidden group cursor-pointer touch-manipulation">
+            <Link key={i} to={`/artwork/${i}`} className="card-mobile overflow-hidden group cursor-pointer touch-manipulation block">
               <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 group-hover:scale-105 transition-transform" />
               <div className="p-4">
                 <h3 className="font-semibold text-secondary-900 text-mobile-base">AI Artwork #{i}</h3>
@@ -112,7 +113,7 @@ export function ExplorePage() {
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -11,6 +11,7 @@ import { notFound } from '@/middleware/notFound'
 import artworkRoutes from '@/routes/artwork'
 import userRoutes from '@/routes/user'
 import aiRoutes from '@/routes/ai'
+import metadataRoutes from '@/routes/metadata'
 
 dotenv.config()
 
@@ -45,6 +46,7 @@ app.get('/health', (req, res) => {
 app.use('/api/artworks', artworkRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/ai', aiRoutes)
+app.use('/api/metadata', metadataRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
